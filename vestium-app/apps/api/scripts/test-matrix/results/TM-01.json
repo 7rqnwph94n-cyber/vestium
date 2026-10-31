@@ -1,0 +1,163 @@
+{
+  "testCaseId": "TM-01",
+  "testCaseName": "Clean Baseline",
+  "purpose": "Establish happy-path benchmark. Well-specified input should produce a clean, deployable module.",
+  "moduleId": "265cb30d-9141-4872-b941-f6142ab418ab",
+  "generationStatus": "complete",
+  "durationMs": 5568,
+  "totalTokensUsed": 1100,
+  "steps": [
+    {
+      "stepKey": "domainSurvey",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "blueprint",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "stage_1",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "stage_2",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "test_1",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "test_2",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "missions",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "placementAssessment",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "lessonMissionMap",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "simulatorDesign",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "themeShell",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "sourceAttribution",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "coherencePass",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "faultAndReference",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "builderAndCapstone",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckG",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckA",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckMerge",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "repairArtifacts",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "factCheckMerge",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "missions",
+      "status": "done",
+      "tokensUsed": 0
+    }
+  ],
+  "findings": {
+    "total": 1,
+    "bySeverity": {
+      "high": 1
+    },
+    "byCategory": {
+      "A": 1
+    },
+    "byDisposition": {
+      "undisposed": 1
+    },
+    "catACount": 1,
+    "regulatoryCount": 0
+  },
+  "expectedBehavior": [
+    {
+      "check": "Generation completes successfully",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Electricity at Work 1989 is primary or high-weight schema",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "≤5 findings total",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "No Cat A (regulatory hard-stop) findings",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Module content covers: switching operations, isolation procedures, PPE for HV work",
+      "passed": null,
+      "notes": ""
+    }
+  ],
+  "timestamp": "2026-03-06T15:15:30.778Z",
+  "cost": {
+    "anthropicTokens": 950,
+    "geminiTokens": 150,
+    "estimatedUsdCost": 0.006892875
+  }
+}

@@ -1,0 +1,493 @@
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CSS VARIABLE SYSTEM — Two themes: Shop Floor (dark) and Office (light)
+   Each [data-ui-theme] block overrides these tokens.
+   Default = Shop Floor (dark cockpit).
+──────────────────────────────────────────────────────────────────────────── */
+
+:root,
+[data-ui-theme="shopfloor"] {
+  /* Backgrounds (hex for direct use, RGB for Tailwind alpha modifiers) */
+  --bg-base:              #0F172A;
+  --bg-panel:             #111827;
+  --bg-surface:           #1F2937;
+  --bg-raised:            #334155;
+  --bg-base-rgb:          15 23 42;
+  --bg-panel-rgb:         17 24 39;
+  --bg-surface-rgb:       31 41 55;
+  --bg-raised-rgb:        51 65 85;
+  --bg-radial-highlight:  #172554;
+
+  /* Text */
+  --text-primary:   #F1F5F9;
+  --text-secondary: #CBD5E1;
+  --text-muted:     #64748B;
+
+  /* Borders */
+  --border-default: #334155;
+  --border-subtle:  rgba(51, 65, 85, 0.55);
+
+  /* Progress bar gradient */
+  --progress-from: #D97706;
+  --progress-to:   #F59E0B;
+
+  /* CTA button (Continue, primary actions) */
+  --cta-bg:      #D97706;
+  --cta-hover:   #F59E0B;
+  --cta-text:    #0F172A;
+
+  /* Design tokens */
+  --card-radius:  0.75rem;
+  --card-shadow:  0 0 16px 3px rgba(79, 70, 229, 0.35), 0 4px 12px -2px rgba(0, 0, 0, 0.5);
+  --card-blur:    none;
+
+  /* Functional colours — locked across both themes */
+  --color-action:       #D97706;
+  --color-caution:      #F59E0B;
+  --color-success:      #10B981;
+  --color-critical:     #EF4444;
+  --color-data-passive: #64748B;
+
+  /* Module accent — controller slot */
+  --accent-controller-text:   #fcd34d;
+  --accent-controller-border: rgba(217, 119, 6, 0.4);
+  --accent-controller-bg:     rgba(217, 119, 6, 0.1);
+  --accent-controller-solid:  #D97706;
+
+  /* Module accent — Sales slot */
+  --accent-sales-text:   #7dd3fc;
+  --accent-sales-border: rgba(14, 165, 233, 0.4);
+  --accent-sales-bg:     rgba(14, 165, 233, 0.1);
+  --accent-sales-solid:  #0ea5e9;
+
+  /* Module accent — Customer Service slot */
+  --accent-cs-text:   #5eead4;
+  --accent-cs-border: rgba(20, 184, 166, 0.4);
+  --accent-cs-bg:     rgba(20, 184, 166, 0.1);
+  --accent-cs-solid:  #14b8a6;
+
+  /* Generic accent (defaults to controller palette) */
+  --accent-gen-text:   #fcd34d;
+  --accent-gen-border: rgba(217, 119, 6, 0.4);
+  --accent-gen-bg:     rgba(217, 119, 6, 0.1);
+  --accent-gen-solid:  #D97706;
+}
+
+/* ─── Office (light) ──────────────────────────────────────────────────────── */
+[data-ui-theme="office"] {
+  --bg-base:              #F0F4F8;
+  --bg-panel:             #FFFFFF;
+  --bg-surface:           #F8FAFC;
+  --bg-raised:            #E2E8F0;
+  --bg-base-rgb:          240 244 248;
+  --bg-panel-rgb:         255 255 255;
+  --bg-surface-rgb:       248 250 252;
+  --bg-raised-rgb:        226 232 240;
+  --bg-radial-highlight:  #DBEAFE;
+
+  --text-primary:   #0F172A;
+  --text-secondary: #475569;
+  --text-muted:     #94A3B8;
+
+  --border-default: #E2E8F0;
+  --border-subtle:  rgba(15, 23, 42, 0.07);
+
+  --progress-from: #D97706;
+  --progress-to:   #F59E0B;
+
+  --cta-bg:    #D97706;
+  --cta-hover: #B45309;
+  --cta-text:  #FFFFFF;
+
+  --card-radius: 0.75rem;
+  --card-shadow: 0 1px 4px rgba(15, 23, 42, 0.25), 0 6px 20px rgba(15, 23, 42, 0.18);
+  --card-blur:   none;
+
+  /* Same functional colours — locked */
+  --color-action:       #D97706;
+  --color-caution:      #F59E0B;
+  --color-success:      #10B981;
+  --color-critical:     #EF4444;
+  --color-data-passive: #64748B;
+
+  /* Module accents — darker variants for light background readability */
+  --accent-controller-text:   #92400E;
+  --accent-controller-border: rgba(146, 64, 14, 0.3);
+  --accent-controller-bg:     rgba(251, 191, 36, 0.12);
+  --accent-controller-solid:  #D97706;
+
+  --accent-sales-text:   #0369A1;
+  --accent-sales-border: rgba(3, 105, 161, 0.3);
+  --accent-sales-bg:     rgba(14, 165, 233, 0.1);
+  --accent-sales-solid:  #0284C7;
+
+  --accent-cs-text:   #0F766E;
+  --accent-cs-border: rgba(15, 118, 110, 0.3);
+  --accent-cs-bg:     rgba(20, 184, 166, 0.1);
+  --accent-cs-solid:  #0D9488;
+
+  --accent-gen-text:   #92400E;
+  --accent-gen-border: rgba(146, 64, 14, 0.3);
+  --accent-gen-bg:     rgba(251, 191, 36, 0.12);
+  --accent-gen-solid:  #D97706;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   BASE STYLES
+──────────────────────────────────────────────────────────────────────────── */
+
+:root {
+  color: var(--text-primary);
+  background-color: var(--bg-base);
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: radial-gradient(
+    circle at 20% 0%,
+    var(--bg-radial-highlight) 0%,
+    var(--bg-base) 48%,
+    var(--bg-base) 100%
+  );
+  color: var(--text-primary);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+* {
+  box-sizing: border-box;
+  transition:
+    background-color 0.2s ease,
+    border-color 0.2s ease,
+    color 0.15s ease;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   .ui-card — theme-aware card / panel primitive
+──────────────────────────────────────────────────────────────────────────── */
+
+.ui-card {
+  background: var(--bg-panel);
+  border: 1px solid var(--border-default);
+  border-radius: var(--card-radius);
+  box-shadow: var(--card-shadow);
+}
+
+/* Apply card shadow to all rounded bordered panels automatically */
+.rounded.border,
+.rounded-xl.border,
+.rounded-lg.border,
+.rounded-2xl.border {
+  box-shadow: var(--card-shadow);
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   FUNCTIONAL COLOUR UTILITIES
+   Semantic signals — never change between themes.
+──────────────────────────────────────────────────────────────────────────── */
+
+.text-action   { color: var(--color-action); }
+.bg-action     { background-color: var(--color-action); }
+.border-action { border-color: var(--color-action); }
+
+.text-caution   { color: var(--color-caution); }
+.bg-caution     { background-color: var(--color-caution); }
+.border-caution { border-color: var(--color-caution); }
+
+.text-fn-success   { color: var(--color-success); }
+.bg-fn-success     { background-color: var(--color-success); }
+.border-fn-success { border-color: var(--color-success); }
+
+.text-fn-critical   { color: var(--color-critical); }
+.bg-fn-critical     { background-color: var(--color-critical); }
+.border-fn-critical { border-color: var(--color-critical); }
+
+.text-data-passive   { color: var(--color-data-passive); }
+.bg-data-passive     { background-color: var(--color-data-passive); }
+.border-data-passive { border-color: var(--color-data-passive); }
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   OFFICE THEME OVERRIDES
+   Shop Floor is the :root default and uses Tailwind-native slate values,
+   so hardcoded bg-slate-* / text-slate-* classes just work.
+   Office (light) needs these overrides.
+──────────────────────────────────────────────────────────────────────────── */
+
+/* Background panels */
+[data-ui-theme="office"] .bg-slate-950 {
+  background-color: var(--bg-base) !important;
+}
+
+[data-ui-theme="office"] .bg-slate-900 {
+  background-color: var(--bg-panel) !important;
+}
+
+[data-ui-theme="office"] .bg-slate-800 {
+  background-color: var(--bg-surface) !important;
+}
+
+[data-ui-theme="office"] .bg-slate-700 {
+  background-color: var(--bg-raised) !important;
+}
+
+/* Semi-transparent / opacity variants — all used across components */
+[data-ui-theme="office"] .bg-slate-950\/95 {
+  background-color: color-mix(in srgb, var(--bg-base) 95%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-950\/80 {
+  background-color: color-mix(in srgb, var(--bg-base) 80%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-900\/95 {
+  background-color: color-mix(in srgb, var(--bg-panel) 95%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-900\/70 {
+  background-color: color-mix(in srgb, var(--bg-panel) 70%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-900\/60 {
+  background-color: color-mix(in srgb, var(--bg-panel) 60%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-900\/40 {
+  background-color: color-mix(in srgb, var(--bg-panel) 40%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-900\/30 {
+  background-color: color-mix(in srgb, var(--bg-panel) 30%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-800\/60 {
+  background-color: color-mix(in srgb, var(--bg-surface) 60%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-800\/50 {
+  background-color: color-mix(in srgb, var(--bg-surface) 50%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-800\/40 {
+  background-color: color-mix(in srgb, var(--bg-surface) 40%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-800\/30 {
+  background-color: color-mix(in srgb, var(--bg-surface) 30%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-700\/60 {
+  background-color: color-mix(in srgb, var(--bg-raised) 60%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-700\/50 {
+  background-color: color-mix(in srgb, var(--bg-raised) 50%, transparent) !important;
+}
+[data-ui-theme="office"] .bg-slate-700\/40 {
+  background-color: color-mix(in srgb, var(--bg-raised) 40%, transparent) !important;
+}
+
+/* Hover opacity variants */
+[data-ui-theme="office"] .hover\:bg-slate-800\/60:hover {
+  background-color: color-mix(in srgb, var(--bg-surface) 60%, transparent) !important;
+}
+[data-ui-theme="office"] .hover\:bg-slate-800\/50:hover {
+  background-color: color-mix(in srgb, var(--bg-surface) 50%, transparent) !important;
+}
+[data-ui-theme="office"] .hover\:bg-slate-800\/40:hover {
+  background-color: color-mix(in srgb, var(--bg-surface) 40%, transparent) !important;
+}
+
+/* text-slate-950 — dark text on colored backgrounds (amber buttons) — KEEP dark */
+[data-ui-theme="office"] .text-slate-950 {
+  color: #0F172A !important;
+}
+
+/* Medium-dark slate backgrounds */
+[data-ui-theme="office"] .bg-slate-600,
+[data-ui-theme="office"] .bg-slate-500 {
+  background-color: var(--bg-raised) !important;
+}
+
+/* Borders */
+[data-ui-theme="office"] .border-slate-800 {
+  border-color: var(--border-subtle) !important;
+}
+
+[data-ui-theme="office"] .border-slate-700 {
+  border-color: var(--border-default) !important;
+}
+
+[data-ui-theme="office"] .border-slate-600 {
+  border-color: var(--border-default) !important;
+}
+
+/* Text — full slate scale coverage */
+[data-ui-theme="office"] .text-slate-50 {
+  color: var(--text-primary) !important;
+}
+[data-ui-theme="office"] .text-slate-100,
+[data-ui-theme="office"] .text-slate-200 {
+  color: var(--text-primary) !important;
+}
+[data-ui-theme="office"] .text-slate-300,
+[data-ui-theme="office"] .text-slate-400 {
+  color: var(--text-secondary) !important;
+}
+[data-ui-theme="office"] .text-slate-500 {
+  color: var(--text-muted) !important;
+}
+[data-ui-theme="office"] .text-slate-700 {
+  color: var(--text-secondary) !important;
+}
+
+/* Placeholder text */
+[data-ui-theme="office"] .placeholder-slate-500::placeholder,
+[data-ui-theme="office"] .placeholder-slate-600::placeholder {
+  color: var(--text-muted) !important;
+}
+
+/* Ring offset (quiz focus) */
+[data-ui-theme="office"] .ring-offset-slate-950 {
+  --tw-ring-offset-color: var(--bg-base);
+}
+
+/* Gradient stops */
+[data-ui-theme="office"] .from-slate-900 {
+  --tw-gradient-from: var(--bg-panel) var(--tw-gradient-from-position);
+}
+[data-ui-theme="office"] .to-slate-950 {
+  --tw-gradient-to: var(--bg-base) var(--tw-gradient-to-position);
+}
+
+/* Progress bar track */
+[data-ui-theme="office"] .bg-slate-700.h-2\.5,
+[data-ui-theme="office"] .h-2\.5.bg-slate-700 {
+  background-color: var(--bg-raised) !important;
+}
+
+/* ─── Office — quiz feedback contrast fixes ──────────────────────────────── */
+
+[data-ui-theme="office"] .bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+}
+
+[data-ui-theme="office"] .bg-rose-500\/10 {
+  background-color: rgba(244, 63, 94, 0.1) !important;
+}
+
+[data-ui-theme="office"] .text-emerald-300 {
+  color: #047857 !important;
+}
+
+[data-ui-theme="office"] .text-rose-300,
+[data-ui-theme="office"] .text-rose-400 {
+  color: #be123c !important;
+}
+
+[data-ui-theme="office"] .border-emerald-500 {
+  border-color: rgba(16, 185, 129, 0.5) !important;
+}
+
+[data-ui-theme="office"] .border-rose-500 {
+  border-color: rgba(244, 63, 94, 0.4) !important;
+}
+
+/* ─── Office — text/bg overrides for classes not in base slate list ──────── */
+
+/* NOTE: text-white is NOT overridden — it's used on colored buttons (violet, amber, emerald)
+   where white text is correct in both themes. Cases where text-white appears on theme-adaptive
+   backgrounds should use text-theme-text directly in the component. */
+
+/* Light amber variants (designed for dark mode — too low contrast on white) */
+[data-ui-theme="office"] .text-amber-100,
+[data-ui-theme="office"] .text-amber-200,
+[data-ui-theme="office"] .text-amber-300,
+[data-ui-theme="office"] .text-amber-400,
+[data-ui-theme="office"] .text-amber-500 {
+  color: #b45309 !important; /* amber-700: good contrast on white */
+}
+
+/* Light rose variants */
+[data-ui-theme="office"] .text-rose-200 {
+  color: #be123c !important;
+}
+
+/* Light emerald variant */
+[data-ui-theme="office"] .text-emerald-200 {
+  color: #047857 !important;
+}
+
+/* Light sky variants */
+[data-ui-theme="office"] .text-sky-100,
+[data-ui-theme="office"] .text-sky-200,
+[data-ui-theme="office"] .text-sky-300 {
+  color: #0369a1 !important;
+}
+
+/* Light teal variants */
+[data-ui-theme="office"] .text-teal-200,
+[data-ui-theme="office"] .text-teal-300 {
+  color: #0f766e !important;
+}
+
+/* Sky 400 — used for Create label, validation warnings */
+[data-ui-theme="office"] .text-sky-400 {
+  color: #0284c7 !important;
+}
+
+/* Emerald 400/500 — used for success states, deployed badges, completion */
+[data-ui-theme="office"] .text-emerald-400,
+[data-ui-theme="office"] .text-emerald-500 {
+  color: #059669 !important;
+}
+
+/* Violet 300/400 — used for onboarding steps, buttons */
+[data-ui-theme="office"] .text-violet-300,
+[data-ui-theme="office"] .text-violet-400 {
+  color: #7c3aed !important;
+}
+
+/* Red 300/400 — used for error states, required markers, failed badges */
+[data-ui-theme="office"] .text-red-300,
+[data-ui-theme="office"] .text-red-400 {
+  color: #dc2626 !important;
+}
+
+/* Orange 300 — used for high-severity findings */
+[data-ui-theme="office"] .text-orange-300 {
+  color: #c2410c !important;
+}
+
+/* Green 400 — used for disposed finding badges */
+[data-ui-theme="office"] .text-green-400 {
+  color: #15803d !important;
+}
+
+/* Blue 400 — used for RAMS PPE labels */
+[data-ui-theme="office"] .text-blue-400 {
+  color: #2563eb !important;
+}
+
+/* ─── Office — dark tinted backgrounds adapted for light mode ──────────── */
+
+/* Red/emerald "950" tinted backgrounds — too dark on light */
+[data-ui-theme="office"] .bg-red-950\/40 {
+  background-color: rgba(239, 68, 68, 0.08) !important;
+}
+[data-ui-theme="office"] .bg-emerald-950\/40 {
+  background-color: rgba(16, 185, 129, 0.08) !important;
+}
+
+/* Green 900 tinted background */
+[data-ui-theme="office"] .bg-green-900\/40 {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+}
+
+/* Emerald 900 background variants */
+[data-ui-theme="office"] .bg-emerald-900\/30,
+[data-ui-theme="office"] .bg-emerald-900\/40 {
+  background-color: rgba(16, 185, 129, 0.1) !important;
+}
+
+/* Violet tinted backgrounds */
+[data-ui-theme="office"] .bg-violet-500\/10 {
+  background-color: rgba(139, 92, 246, 0.08) !important;
+}
+[data-ui-theme="office"] .bg-violet-500\/20 {
+  background-color: rgba(139, 92, 246, 0.12) !important;
+}

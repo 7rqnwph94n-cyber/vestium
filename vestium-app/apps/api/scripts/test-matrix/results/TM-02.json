@@ -1,0 +1,163 @@
+{
+  "testCaseId": "TM-02",
+  "testCaseName": "Context Ambiguity",
+  "purpose": "Messy, incomplete intake. Does the system flag assumptions and create reviewable findings?",
+  "moduleId": "17a0293d-d834-4acf-bb57-2ccf4e9855d9",
+  "generationStatus": "complete",
+  "durationMs": 3884,
+  "totalTokensUsed": 1100,
+  "steps": [
+    {
+      "stepKey": "domainSurvey",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "blueprint",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "stage_1",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "stage_2",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "test_1",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "test_2",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "missions",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "placementAssessment",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "lessonMissionMap",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "simulatorDesign",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "themeShell",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "sourceAttribution",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "coherencePass",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "faultAndReference",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "builderAndCapstone",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckG",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckA",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckMerge",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "repairArtifacts",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "factCheckMerge",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "missions",
+      "status": "done",
+      "tokensUsed": 0
+    }
+  ],
+  "findings": {
+    "total": 1,
+    "bySeverity": {
+      "high": 1
+    },
+    "byCategory": {
+      "A": 1
+    },
+    "byDisposition": {
+      "undisposed": 1
+    },
+    "catACount": 1,
+    "regulatoryCount": 0
+  },
+  "expectedBehavior": [
+    {
+      "check": "Generation completes (does not fail on vague input)",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Classifier still selects utilities base schemas",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Fact-check flags vague or assumed claims",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "More findings than TM-01 (>5)",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Blueprint is less specific than TM-01 (fewer concrete procedures)",
+      "passed": null,
+      "notes": ""
+    }
+  ],
+  "timestamp": "2026-03-06T15:15:36.348Z",
+  "cost": {
+    "anthropicTokens": 950,
+    "geminiTokens": 150,
+    "estimatedUsdCost": 0.006892875
+  }
+}

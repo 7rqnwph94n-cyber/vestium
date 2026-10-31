@@ -1,0 +1,52 @@
+{
+  "name": "@complianceforge/api",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "node --env-file=.env --watch --import tsx/esm src/index.ts",
+    "dev:clean": "sh -c 'pids=$(lsof -tiTCP:3001 -sTCP:LISTEN); if [ -n \"$pids\" ]; then echo \"Stopping existing listener(s) on :3001 -> $pids\"; kill $pids; sleep 1; fi; node --env-file=.env --watch --import tsx/esm src/index.ts'",
+    "dev:once": "node --env-file=.env --import tsx/esm src/index.ts",
+    "build": "tsc -p tsconfig.json",
+    "start": "node dist/index.js",
+    "db:migrate": "tsx --env-file=.env src/db/migrate.ts",
+    "db:verify-worm": "tsx --env-file=.env src/db/verifyWorm.ts",
+    "db:seed-assets": "tsx --env-file=.env src/scripts/seedAssets.ts",
+    "db:seed-demo": "tsx --env-file=.env src/scripts/seedDemo.ts",
+    "db:embed-docs": "NODE_OPTIONS='--use-system-ca' tsx --env-file=.env src/scripts/embedDocs.ts",
+    "assets:fetch-svgs": "tsx --env-file=.env src/scripts/fetchSvgs.ts",
+    "smoke:auth": "tsx --env-file=.env src/scripts/smoke-auth.ts",
+    "smoke:generation": "node --env-file=.env --import tsx/esm src/scripts/smoke-generation.ts --runs 1",
+    "smoke:generation:loop": "node --env-file=.env --import tsx/esm src/scripts/smoke-generation.ts --runs 10",
+    "watch:generation": "node --env-file=.env --import tsx/esm src/scripts/watch-generation.ts",
+    "watch:generation:strict": "node --env-file=.env --import tsx/esm src/scripts/watch-generation.ts --fail-on-failed",
+    "trace:generation": "node --env-file=.env --import tsx/esm src/scripts/read-generation-trace.ts",
+    "verify:module": "node --env-file=.env --import tsx/esm src/scripts/verify-module-assessments.ts",
+    "typecheck": "tsc -p tsconfig.json --noEmit",
+    "test": "vitest run"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.54.0",
+    "@clerk/backend": "^1.0.0",
+    "@complianceforge/types": "workspace:*",
+    "@fastify/helmet": "^13.0.2",
+    "@fastify/multipart": "^9.4.0",
+    "@fastify/rate-limit": "^10.3.0",
+    "@fastify/static": "^9.0.0",
+    "@neondatabase/serverless": "^0.10.0",
+    "@types/qrcode": "^1.5.6",
+    "fastify": "^5.3.3",
+    "fastify-plugin": "^5.0.1",
+    "pdf-lib": "^1.17.1",
+    "pdf-parse": "^2.4.5",
+    "qrcode": "^1.5.4",
+    "resend": "^6.9.3",
+    "zod": "^3.24.1"
+  },
+  "devDependencies": {
+    "@types/node": "^22.0.0",
+    "tsx": "^4.19.0",
+    "typescript": "~5.7.2",
+    "vitest": "^3.2.4"
+  }
+}

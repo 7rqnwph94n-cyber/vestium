@@ -1,0 +1,78 @@
+{
+  "name": "@complianceforge/web",
+  "description": "ComplianceForge — UK H&S regulatory compliance training generation platform (frontend).",
+  "private": true,
+  "version": "0.1.0",
+  "author": "Rich Brotherton",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/richbrotherton87-svg/complianceforge.git"
+  },
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "typecheck": "tsc -b --noEmit",
+    "typecheck:all": "tsc -b --noEmit && pnpm --filter @complianceforge/api run typecheck",
+    "preview": "vite preview",
+    "test": "vitest",
+    "lint": "eslint src/",
+    "lint:fix": "eslint src/ --fix",
+    "format": "prettier --write \"src/**/*.{ts,tsx}\"",
+    "format:check": "prettier --check \"src/**/*.{ts,tsx}\"",
+    "api": "pnpm --filter @complianceforge/api dev",
+    "api:build": "pnpm --filter @complianceforge/api build",
+    "api:smoke:generation": "pnpm --filter @complianceforge/api smoke:generation",
+    "api:smoke:generation:loop": "pnpm --filter @complianceforge/api smoke:generation:loop",
+    "api:watch:generation": "pnpm --filter @complianceforge/api watch:generation",
+    "api:watch:generation:strict": "pnpm --filter @complianceforge/api watch:generation:strict",
+    "api:trace:generation": "pnpm --filter @complianceforge/api trace:generation",
+    "api:verify:module": "pnpm --filter @complianceforge/api verify:module",
+    "dev:all": "concurrently \"pnpm dev\" \"pnpm api\"",
+    "e2e": "playwright test",
+    "e2e:headed": "playwright test --headed",
+    "e2e:ui": "playwright test --ui",
+    "e2e:seed": "tsx e2e/seed.ts"
+  },
+  "dependencies": {
+    "@anthropic-ai/sdk": "^0.54.0",
+    "@clerk/clerk-react": "^5.54.0",
+    "@complianceforge/types": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "react-router-dom": "^6.30.1",
+    "zod": "^3.24.1"
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "esbuild",
+      "@clerk/shared"
+    ]
+  },
+  "devDependencies": {
+    "@clerk/testing": "^2.0.1",
+    "@eslint/js": "^10.0.1",
+    "@playwright/test": "^1.58.2",
+    "@testing-library/jest-dom": "^6.7.0",
+    "@testing-library/react": "^16.3.0",
+    "@testing-library/user-event": "^14.6.1",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.6",
+    "@vitejs/plugin-react": "^4.3.4",
+    "autoprefixer": "^10.4.20",
+    "concurrently": "^9.0.0",
+    "eslint": "^10.0.2",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.5.2",
+    "jsdom": "^26.0.0",
+    "postcss": "^8.5.3",
+    "prettier": "^3.8.1",
+    "tailwindcss": "^3.4.17",
+    "typescript": "~5.7.2",
+    "typescript-eslint": "^8.56.1",
+    "vite": "^6.3.5",
+    "vitest": "^3.2.4"
+  }
+}

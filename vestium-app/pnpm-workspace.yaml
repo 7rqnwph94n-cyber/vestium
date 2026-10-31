@@ -1,0 +1,4 @@
+packages:
+  - '.'           # root = @complianceforge/web (frontend)
+  - 'apps/*'
+  - 'packages/*'

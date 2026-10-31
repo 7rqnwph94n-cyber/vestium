@@ -1,0 +1,163 @@
+{
+  "testCaseId": "TM-05",
+  "testCaseName": "Version Churn — Delta from TM-01",
+  "purpose": "Same base context as TM-01 with one addition. Is the delta clear? Does traceability hold?",
+  "moduleId": "984356c8-c3fb-4582-a7e4-0cb32a106267",
+  "generationStatus": "complete",
+  "durationMs": 3413,
+  "totalTokensUsed": 1100,
+  "steps": [
+    {
+      "stepKey": "domainSurvey",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "blueprint",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "stage_1",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "stage_2",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "test_1",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "test_2",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "missions",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "placementAssessment",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "lessonMissionMap",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "simulatorDesign",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "themeShell",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "sourceAttribution",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "coherencePass",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "faultAndReference",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "builderAndCapstone",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckG",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckA",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckMerge",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "repairArtifacts",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "factCheckMerge",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "missions",
+      "status": "done",
+      "tokensUsed": 0
+    }
+  ],
+  "findings": {
+    "total": 1,
+    "bySeverity": {
+      "high": 1
+    },
+    "byCategory": {
+      "A": 1
+    },
+    "byDisposition": {
+      "undisposed": 1
+    },
+    "catACount": 1,
+    "regulatoryCount": 0
+  },
+  "expectedBehavior": [
+    {
+      "check": "Generation completes successfully",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Confined Spaces 1997 is more prominent than in TM-01",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Content covers confined space entry procedures, gas testing, emergency extraction",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "If TM-01 was deployed first, org context should influence this module",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Blueprint topics show delta from TM-01 (confined space additions visible)",
+      "passed": null,
+      "notes": ""
+    }
+  ],
+  "timestamp": "2026-03-06T15:15:46.236Z",
+  "cost": {
+    "anthropicTokens": 950,
+    "geminiTokens": 150,
+    "estimatedUsdCost": 0.006892875
+  }
+}

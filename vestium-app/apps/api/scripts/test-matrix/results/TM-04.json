@@ -1,0 +1,168 @@
+{
+  "testCaseId": "TM-04",
+  "testCaseName": "Contradiction Injection",
+  "purpose": "Deliberately include dangerous false statements. Does the system detect and force findings?",
+  "moduleId": "1353faaf-b982-4141-a38e-987102b54cdc",
+  "generationStatus": "complete",
+  "durationMs": 2910,
+  "totalTokensUsed": 1100,
+  "steps": [
+    {
+      "stepKey": "domainSurvey",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "blueprint",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "stage_1",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "stage_2",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "test_1",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "test_2",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "missions",
+      "status": "done",
+      "tokensUsed": 100
+    },
+    {
+      "stepKey": "placementAssessment",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "lessonMissionMap",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "simulatorDesign",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "themeShell",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "sourceAttribution",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "coherencePass",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "faultAndReference",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "builderAndCapstone",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckG",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckA",
+      "status": "done",
+      "tokensUsed": 50
+    },
+    {
+      "stepKey": "factCheckMerge",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "repairArtifacts",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "factCheckMerge",
+      "status": "done",
+      "tokensUsed": 0
+    },
+    {
+      "stepKey": "missions",
+      "status": "done",
+      "tokensUsed": 0
+    }
+  ],
+  "findings": {
+    "total": 1,
+    "bySeverity": {
+      "high": 1
+    },
+    "byCategory": {
+      "A": 1
+    },
+    "byDisposition": {
+      "undisposed": 1
+    },
+    "catACount": 1,
+    "regulatoryCount": 0
+  },
+  "expectedBehavior": [
+    {
+      "check": "Generation completes successfully",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Fact-check flags \"PPE not required <230V\" as false (Electricity at Work Reg 4(3), GS38)",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Fact-check flags \"isolation unnecessary\" as false (Electricity at Work Reg 12/13)",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Fact-check flags \"risk assessments only for HV\" as false (MHSWR Reg 3)",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "≥3 Cat A (regulatory) findings",
+      "passed": null,
+      "notes": ""
+    },
+    {
+      "check": "Generated content does NOT repeat the false claims",
+      "passed": null,
+      "notes": ""
+    }
+  ],
+  "timestamp": "2026-03-06T15:15:43.325Z",
+  "cost": {
+    "anthropicTokens": 950,
+    "geminiTokens": 150,
+    "estimatedUsdCost": 0.006892875
+  }
+}

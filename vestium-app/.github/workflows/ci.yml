@@ -1,0 +1,51 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  ci:
+    name: Build & Test
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      # TypeScript must be clean across ALL workspaces before any test runs.
+      # A type error that silently passes tests is a deployment incident waiting to happen.
+      # pnpm build = tsc -b (strict, build mode) + vite build (production bundle).
+      - name: Build — frontend (tsc -b + vite)
+        run: pnpm build
+
+      - name: Build — API (tsc)
+        run: pnpm --filter @complianceforge/api run typecheck
+
+      # Frontend unit tests: gating logic, simulator engine, validation, contradiction detection.
+      - name: Test — frontend
+        run: pnpm test --reporter=verbose
+
+      # API unit tests: schema validation, regulatory policy (contradiction detector, review policy).
+      - name: Test — API
+        run: pnpm --filter @complianceforge/api test --reporter=verbose

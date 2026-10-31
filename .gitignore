@@ -1,0 +1,54 @@
+# Dependencies
+node_modules/
+
+# Build output
+dist/
+dist-ssr/
+
+# Environment files — never commit secrets
+.env
+.env.local
+.env.*.local
+
+# Vite cache
+.vite/
+
+# TypeScript build info
+*.tsbuildinfo
+
+# Compiled config artifacts
+vite.config.d.ts
+vite.config.js
+
+# Test coverage
+coverage/
+
+# macOS
+.DS_Store
+
+# Local dev artifacts
+venv/
+archive/
+tmp/
+apps/api/tmp/
+
+# Editor
+.vscode/
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# Playwright / E2E
+e2e/.auth/
+e2e/screenshots/
+e2e/ux-report.json
+e2e/ux-report.md
+playwright-report/
+test-results/
+.env.e2e
+
+# Logs
+*.log
+npm-debug.log*

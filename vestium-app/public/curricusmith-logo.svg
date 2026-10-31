@@ -1,0 +1,31 @@
+<svg width="980" height="240" viewBox="0 0 980 240" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="iconSilver" x1="26" y1="16" x2="210" y2="206" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#F6F8FC"/>
+      <stop offset="0.45" stop-color="#DDE3EE"/>
+      <stop offset="1" stop-color="#A9B4C8"/>
+    </linearGradient>
+    <linearGradient id="textBlue" x1="220" y1="82" x2="905" y2="192" gradientUnits="userSpaceOnUse">
+      <stop offset="0" stop-color="#6D8FD8"/>
+      <stop offset="0.52" stop-color="#BBD0FF"/>
+      <stop offset="1" stop-color="#F6F8FF"/>
+    </linearGradient>
+    <filter id="softGlow" x="0" y="0" width="980" height="240" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feGaussianBlur stdDeviation="2.2" result="blur"/>
+      <feColorMatrix in="blur" type="matrix" values="0 0 0 0 0.65  0 0 0 0 0.76  0 0 0 0 1  0 0 0 0.17 0"/>
+    </filter>
+  </defs>
+
+  <g transform="translate(18 18)">
+    <path d="M36 72H118V111H92C73 111 58 97 36 72Z" fill="url(#iconSilver)"/>
+    <path d="M147 33H210V156H173C161 156 151 146 151 134V94H127V33H147Z" fill="url(#iconSilver)"/>
+    <path d="M116 33H161V122C161 148 139 168 113 168H80V134H96C107 134 116 125 116 114V33Z" fill="url(#iconSilver)"/>
+    <path d="M127 168H210V190H72V168H127Z" fill="url(#iconSilver)"/>
+    <path d="M164 84C176 76 189 72 203 72V82C191 82 180 85 170 91L164 84Z" fill="#97A6C7"/>
+    <path d="M164 101C176 93 189 89 203 89V99C191 99 180 102 170 108L164 101Z" fill="#97A6C7"/>
+    <path d="M164 118C176 110 189 106 203 106V116C191 116 180 119 170 125L164 118Z" fill="#97A6C7"/>
+  </g>
+
+  <text x="250" y="172" fill="url(#textBlue)" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="100" font-weight="700" letter-spacing="-1.2">CurricuSmith</text>
+  <text x="250" y="172" fill="transparent" filter="url(#softGlow)" font-family="Inter, Segoe UI, Arial, sans-serif" font-size="100" font-weight="700" letter-spacing="-1.2">CurricuSmith</text>
+</svg>
