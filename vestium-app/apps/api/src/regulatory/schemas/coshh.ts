@@ -116,7 +116,7 @@ export const COSHH_2002: RegulatorySchema = {
             mandatory: false,
             conditionNote: 'Health surveillance is mandatory for employees exposed to substances listed ' +
                 'in Schedule 6 (including certain isocyanates, hardwood dust, and vinyl ' +
-                'chloride monomer). For other substances, the decision is ri[REDACTED].',
+                'chloride monomer). For other substances, the decision is risk-assessment-based.',
             acopReference: 'L5 paragraphs 222–265',
         },
         {
